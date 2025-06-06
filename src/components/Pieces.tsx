@@ -22,7 +22,7 @@ export default function () {
 }
 
 function PieceComponents(props: { piece: Piece }) {
-    const { scene } = useGLTF(`/${props.piece.type}.glb`)
+    const { scene } = useGLTF(`/chess/${props.piece.type}.glb`)
     const clonedScene = useMemo(() => clone(scene), [scene])
     const { turn } = useTurnStore()    
     const setSelectedPiece = useSelectedPieceStore(set => set.setPieces)
