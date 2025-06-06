@@ -41,7 +41,12 @@ export default function () {
                                 })
 
                                 if (killablePieces) {
-                                    setPieces(pieces.filter(p => p != killablePieces))
+                                    if (killablePieces.type == "king") {
+                                        alert(killablePieces.color == "black" ? "White win" : "Black win")
+                                        window.location.reload();
+                                    } else {
+                                        setPieces(pieces.filter(p => p != killablePieces))
+                                    }
                                 }
 
                                 selectedPiece.position.x = x
